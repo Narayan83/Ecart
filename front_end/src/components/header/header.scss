@@ -1,0 +1,39 @@
+/* Reusable Color Variables */
+
+:root {
+    --first-color: #07a4e9;
+    --first-color-light: #9bd6ec;
+    --black-color: #000000;
+    --white-color: #ffffff;
+    --background-color: #dedede;
+}
+
+/* SearchBar Styling */
+
+header{width: 100%; height: auto; margin: auto; padding: 20px 50px;}
+header .logo{width: 150px; height: auto; cursor: pointer; display: block; margin-right: auto;}
+header .logo:hover{ transform: translateY(-5px); transition: all 0.3s ease-in-out;}
+header .headerSearch{width: 100%; height: 50px; border: 2px solid var(--first-color); padding: 10px 20px; border-radius: 5px;}
+header .headerSearch .selectDrop{width: 25%; font-size: 16px; font-weight: 500; position: relative; cursor: pointer;}
+header .headerSearch .selectDrop::after{content: ''; position: absolute; top: 0px; right: -10px; width: 2px; height: 25px; background: rgba(0,0,0,0.3);}
+header .headerSearch .searchBox {width: 75%; padding-left: 30px; position: relative;}
+header .headerSearch .searchBox input{width: 100%; height: 40px; border: 0px; outline: none !important; font-size: 16px;}
+header .headerSearch .searchBox .searchIcon{position: absolute; top: 8px; right: 0px; cursor: pointer; font-size: 25px !important; color: var(--first-color);}
+
+/* Header Icons */
+
+header .headerTabs {padding-left: 10px;}
+header .headerTabs li{position: relative; margin-left: 15px; top: -5px;}
+header .headerTabs li span{font-size: 18px; cursor: pointer; font-weight: 400; padding-left: 20px;}
+header .headerTabs li span img{width: 25px; height: 25px; margin-right: 10px; color: var(--first-color);}
+
+/* Account Dropdown Menu */
+
+.subMenu{position: absolute; top: 40px; right: -50px; width: 180px; height: auto; background: var(--white-color); box-shadow: 5px 5px 15px rgba(0,0,0, 0.5); padding: 10px 0px; z-index: 100;}
+.subMenu li{width: 100% !important; list-style: none; margin: 0px !important;}
+.subMenu li button{width: 100% !important; text-align: left !important; justify-content: flex-start !important; color: rgb(69, 69, 69) !important; text-transform: capitalize !important; font-size: 16px !important; padding: 10px 15px !important;}
+.subMenu li button svg{margin-right: 10px !important; color: var(--first-color);}
+.subMenu li button:hover{background: var(--background-color) !important; color: var(--black-color) !important;}
+
+
+
