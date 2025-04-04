@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{margin: 0px; padding: 0px; box-sizing: border-box;}
+body{font-family: 'Roboto', sans-serif;}
+#root{zoom: 100%;}
+
+.transition{transition: all 0.3s ease-in-out;}
+.container-fluid{padding: 0px 45px;}
+
+.hd{font-size: 26px; font-weight: 600; margin-bottom: 20px;}
+
+
+

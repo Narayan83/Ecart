@@ -1,0 +1,48 @@
+/* Import slick-carousel CSS for default styling */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+
+/* Styling for the home slider container */
+.homeSlider {
+    padding: 45px 0px;
+    cursor: pointer;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Slider navigation arrows */
+.homeSlider .slick-prev, 
+.homeSlider .slick-next {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    z-index: 100 !important;
+}
+
+.homeSlider .slick-prev {
+    left: -60px !important;
+}
+
+.homeSlider .slick-next {
+    right: -60px !important;
+}
+
+/* Styling for the previous & next arrows */
+.homeSlider .slick-prev:before, 
+.homeSlider .slick-next:before {
+    color: var(--first-color);
+    font-size: 35px !important;
+    opacity: 1 !important;
+}
+
+/* Hover effect */
+.homeSlider .slick-prev:hover, 
+.homeSlider .slick-next:hover {
+    font-weight: bolder;
+}

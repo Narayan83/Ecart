@@ -1,0 +1,242 @@
+/* Reusable color variables for styling */
+:root {
+    --first-color: #07a4e9;
+    --first-color-light: #9bd6ec;
+    --black-color: #000000;
+    --white-color: #ffffff;
+    --background-color: #dedede;
+}
+
+/* Header container */
+header {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 20px 30px;
+}
+
+/* Header wrapper fixed and transition */
+.headerWrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--white-color);
+  }
+  
+  .headerWrapper.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Adjust body padding when header is fixed */
+  body.fixed-header {
+    padding-top: 80px; /* Should match your header height */
+  }
+
+/* Logo styling */
+header .logo {
+    width: 120px;
+    height: auto;
+    cursor: pointer;
+}
+
+header .logo:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Search bar */
+header .headerSearch {
+    width: 105%;
+    height: 50px;
+    border: 2px solid var(--first-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    float: left; /* Moves the search bar to the left */
+    margin-right: auto; /* Pushes everything else to the right */
+}
+
+header .headerSearch .selectDrop {
+    width: 40%;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    cursor: pointer;
+}
+
+header .headerSearch .selectDrop::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: -10px;
+    width: 2px;
+    height: 25px;
+    background: rgba(0,0,0,0.3);
+}
+
+header .headerSearch .searchBox {
+    width: 75%;
+    padding-left: 30px;
+    position: relative;
+}
+
+header .headerSearch .searchBox input {
+    width: 100%;
+    height: 40px;
+    border: 0px;
+    outline: none !important;
+    font-size: 16px;
+}
+
+header .headerSearch .searchBox .searchIcon {
+    position: absolute;
+    top: 8px;
+    right: 0px;
+    cursor: pointer;
+    font-size: 25px !important;
+    color: var(--first-color);
+}
+
+/* Header Icons Section - UPDATED FOR ALIGNMENT */
+header .headerTabs {
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    margin: 0;
+}
+
+header .headerTabs li {
+    position: relative;
+    margin: 0 8px !important;
+    top: 0;
+    white-space: nowrap;
+}
+
+header .headerTabs li span {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 5px 5px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+header .headerTabs li:hover span {
+    transform: translateY(-2px);
+}
+
+header .headerTabs li span img {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+}
+
+/* Account dropdown */
+.subMenu {
+    position: absolute;
+    top: 50px;
+    left: -40px;
+    width: 200px !important;
+    height: auto;
+    background: var(--white-color);
+    box-shadow: 5px 5px 15px rgba(0,0,0, 0.5);
+    padding: 10px 0px;
+    z-index: 1001;
+}
+
+.subMenu li {
+    width: 100% !important;
+    list-style: none;
+    margin: 0px !important;
+}
+
+.subMenu li button {
+    width: 100% !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    color: rgb(69, 69, 69) !important;
+    text-transform: capitalize !important;
+    font-size: 16px !important;
+    padding: 10px 15px 10px 10px !important; /* Reduced left padding */
+    margin-left: -8px !important; /* Pulls content slightly left */
+    transition: all 0.2s ease !important; /* Smooth transition for hover */
+}
+
+.subMenu li button svg {
+    margin-right: 10px !important;
+    color: var(--first-color);
+}
+
+.subMenu li button:hover {
+    background: var(--background-color) !important;
+    color: var(--black-color) !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    header {
+        padding: 20px 15px;
+    }
+    
+    header .headerSearch {
+        height: 45px;
+    }
+    
+    header .headerTabs li span {
+        padding: 5px;
+    }
+    
+    header .headerTabs li span img {
+        margin-right: 0;
+    }
+    
+    .headerTabs .icon-label {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    header .logo {
+        width: 120px;
+        margin: 0 auto;
+    }
+    
+    header .headerSearch {
+        margin-top: 15px;
+    }
+    
+    header .headerTabs li {
+        margin: 0 4px !important;
+    }
+    
+    header .headerTabs li span img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    header {
+        padding: 15px 10px;
+    }
+    
+    header .headerSearch .selectDrop {
+        width: 30%;
+        font-size: 14px;
+    }
+    
+    header .headerSearch .searchBox {
+        padding-left: 15px;
+    }
+    
+    header .headerSearch .searchBox input {
+        font-size: 14px;
+    }
+}
