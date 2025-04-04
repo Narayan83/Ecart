@@ -1,0 +1,368 @@
+/* nav.css */
+/* Define color variables */
+:root {
+  --first-color: #07a4e9;
+  --first-color-light: #9bd6ec;
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --background-color: #dedede;
+}
+
+/* Styling for the main navigation bar */
+.nav {
+  width: 100%;
+  height: 60px;
+  margin: auto;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white-color);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Container styling */
+.nav .container-fluid {
+  width: 100%;
+  padding: 0 15px;
+}
+
+/* Row styling */
+.nav .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* General part styling */
+.nav .part1,
+.nav .part2,
+.nav .part3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Category tab button */
+.nav .catTab {
+  padding: 8px 20px;
+  background: var(--first-color);
+  color: var(--white-color);
+  border-radius: 5px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav .catTab:hover {
+  background: #0688c7;
+}
+
+/* Navigation menu styling */
+.nav nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 5px;
+}
+
+.nav nav ul li {
+  position: relative;
+}
+
+.nav nav ul li button {
+  text-transform: capitalize;
+  padding: 10px 15px;
+  color: var(--first-color);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav nav ul li button:hover {
+  color: var(--first-color);
+  border-radius: 5px;
+}
+
+.nav nav ul li button a {
+  text-decoration: none;
+  color: rgba(0,0,0,0.8);
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav nav ul li button a:hover {
+  color: var(--first-color);
+}
+
+/* Support section styling */
+.nav .support {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.nav .support:hover {
+  transform: translateY(-2px);
+}
+
+.nav .support svg {
+  font-size: 32px;
+  color: var(--first-color);
+}
+
+.nav .support .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav .support h4 {
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--first-color);
+  margin: 0;
+}
+
+.nav .support p {
+  font-size: 12px;
+  line-height: 1.2;
+  color: rgba(0,0,0,0.7);
+  margin: 0;
+}
+
+/* Dropdown menu styling */
+.nav .dropDown_menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background: var(--white-color);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  border-radius: 5px;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.nav .dropDown_menu li {
+  width: 100%;
+  list-style: none;
+}
+
+.nav .dropDown_menu li button {
+  width: 100%;
+  text-align: left;
+  justify-content: flex-start;
+  color: rgb(69, 69, 69);
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+.nav .dropDown_menu li button:hover {
+  background: var(--background-color);
+}
+
+/* Mega menu styling */
+.nav .megaMenu {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: var(--white-color);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 100;
+}
+
+.nav .megaMenu .col {
+  padding: 0 10px;
+}
+
+.nav .megaMenu h4 {
+  font-size: 18px;
+  color: var(--first-color);
+  margin-bottom: 15px;
+  padding: 0;
+}
+
+.nav .megaMenu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav .megaMenu ul li a {
+  color: rgba(0,0,0,0.8);
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav .megaMenu ul li a:hover {
+  color: var(--first-color);
+  padding-left: 5px;
+}
+
+.nav .megaMenu img {
+  border-radius: 5px;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* Show dropdowns on hover */
+.nav nav ul li:hover .dropDown_menu,
+.nav nav ul li:hover .megaMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(5px);
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--first-color);
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1199px) {
+  .nav nav ul li button {
+      padding: 10px 12px;
+  }
+}
+
+@media (max-width: 991px) {
+  .nav {
+      height: auto;
+      padding: 15px 0;
+  }
+  
+  .nav .container-fluid {
+      padding: 0 20px;
+  }
+  
+  .mobile-menu-toggle {
+      display: block;
+      order: -1;
+  }
+  
+  .nav .part1, 
+  .nav .part3 {
+      display: none;
+  }
+  
+  .nav .part2 {
+      width: 100%;
+      order: 1;
+  }
+  
+  .nav nav ul {
+      flex-direction: column;
+      display: none;
+      width: 100%;
+  }
+  
+  .nav nav ul.show {
+      display: flex;
+  }
+  
+  .nav nav ul li {
+      width: 100%;
+      margin-bottom: 5px;
+  }
+  
+  .nav .dropDown_menu,
+  .nav .megaMenu {
+      position: static;
+      width: 100% !important;
+      box-shadow: none;
+      display: none;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      padding: 0;
+      margin-top: 5px;
+  }
+  
+  .nav nav ul li:hover .dropDown_menu,
+  .nav nav ul li:hover .megaMenu {
+      display: block;
+      transform: none;
+  }
+  
+  .megaMenu .col {
+      margin-bottom: 15px;
+  }
+  
+  .megaMenu h4 {
+      font-size: 16px !important;
+      padding-left: 15px !important;
+  }
+  
+  .megaMenu ul li a {
+      font-size: 14px !important;
+      margin-left: 15px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav {
+      padding: 10px 0;
+  }
+  
+  .nav nav ul li button {
+      padding: 8px 10px !important;
+      font-size: 14px !important;
+  }
+  
+  .megaMenu {
+      grid-template-columns: 1fr;
+  }
+  
+  .megaMenu .col:last-child {
+      display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .nav {
+      padding: 10px 0;
+  }
+  
+  .nav .container-fluid {
+      padding: 0 15px;
+  }
+}

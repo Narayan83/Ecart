@@ -1,0 +1,140 @@
+/* select.css */
+:root {
+    --first-color: #07a4e9;
+    --first-color-light: #9bd6ec;
+    --black-color: #000000;
+    --white-color: #ffffff;
+    --background-color: #e0e0e0;
+}
+
+.selectDrop {
+    position: relative;
+    width: 200px;
+}
+
+.openSelect {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
+    background: var(--white-color);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--black-color);
+    transition: all 0.3s ease;
+}
+
+.openSelect:hover {
+    color: var(--first-color);
+}
+
+.downArrow {
+    transition: transform 0.3s ease;
+}
+
+.selectDrop.open .downArrow {
+    transform: rotate(180deg);
+}
+
+.dropMenu {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: -8px;
+    width: 120%;
+    background: var(--white-color);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1001;
+    padding: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.selectDrop.open .dropMenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.searchField input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--first-color);
+    outline: none;
+    padding: 0 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.searchResult {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.searchResult::-webkit-scrollbar {
+    width: 6px;
+}
+
+.searchResult::-webkit-scrollbar-thumb {
+    background: var(--background-color);
+    border-radius: 10px;
+}
+
+.searchResult li {
+    list-style: none;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.searchResult li:hover {
+    background: var(--first-color-light);
+    color: var(--black-color);
+}
+
+.searchResult li.active {
+    background: var(--background-color);
+    color: var(--black-color);
+}
+
+.searchResult li.no-result {
+    cursor: default;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 15px 0;
+}
+
+.searchResult li.no-result:hover {
+    background: transparent;
+}
+
+@media (max-width: 767px) {
+    .selectDrop {
+        width: 180px;
+    }
+    
+    .openSelect {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .dropMenu {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    .selectDrop {
+        width: 160px;
+    }
+}
